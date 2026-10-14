@@ -25,6 +25,14 @@ These are survey-derived group-level estimates, not individual respondent record
 
 The initial extract contains 120 estimates with no missing values. This includes overall population and education groups alongside the age groups for the three selected countries and the EU-27 benchmark; it does not yet include all EU countries.
 
+## Why this matters
+
+As banking, healthcare and public services move online, differences in digital skills can become barriers to everyday participation. Leppiman, Riivits-Arkonsuo and Pohjola (2021) discuss this challenge in Estonia and Finland, highlighting the importance of access, skills, confidence and support.
+
+Their discussion motivates our age-focused comparison, but does not establish the causes of patterns in our Eurostat data. Older adults have diverse experiences and abilities; age alone should not be treated as an explanation for digital exclusion.
+
+Source: Leppiman, A., Riivits-Arkonsuo, I., & Pohjola, A. (2021). Old-Age Digital Exclusion as a Policy Challenge in Estonia and Finland. https://doi.org/10.1007/978-3-030-51406-8_32
+
 [Slide-deck of the data story](presentation.qmd)
 
 ```{r}
