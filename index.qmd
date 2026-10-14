@@ -1,6 +1,6 @@
 ---
-title: "Report"
-author: "Names"
+title: "Who Is Being Left Behind? Age and Digital Skills in Europe"
+author: "Nokwanele Pretty Gwebu and Kay-Lee Dramat"
 format: html
 bibliography: Visual Communication and Data Storytelling.json
 ---
