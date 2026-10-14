@@ -5,7 +5,11 @@ format: html
 bibliography: Visual Communication and Data Storytelling.json
 ---
 
-> The file `index.qmd` (where this page is built from) and `presentation.qmd` are template for your **data story**. The **Presentation** (`presentation.qmd`) is an HTML slide-deck in the format Revealjs which you can build with [Quarto > Presentations > Revealjs](https://quarto.org/docs/presentations/revealjs/). The **Report** (`index.qmd`) accompanies and in some sense repeats the Data Story in pyramid format (see @Dykes2019EffectiveDataStorytelling). That is like a newspaper article coming quickly to the main point and then underpins it with additional information and context. *When you use `index.qmd` as template, remove this text.*
+## Our guiding question
+
+How do digital skills differ across age groups in the European Union, and how do Germany, Estonia and Romania compare with the wider European pattern?
+
+We use Eurostat data for 2021, 2023 and 2025, focusing on six age groups between 16 and 74. Our main measure is the percentage of individuals with basic or above-basic overall digital skills. We will also investigate a compatible internet-use indicator to explore how being online differs from having digital skills.
 
 [Slide-deck of the data story](presentation.qmd)
 
