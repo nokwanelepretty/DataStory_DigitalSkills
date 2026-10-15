@@ -33,6 +33,22 @@ Their discussion motivates our age-focused comparison, but does not establish th
 
 Source: Leppiman, A., Riivits-Arkonsuo, I., & Pohjola, A. (2021). Old-Age Digital Exclusion as a Policy Challenge in Estonia and Finland. https://doi.org/10.1007/978-3-030-51406-8_32
 
+## Digital progress—for whom?
+
+Imagine needing to book a medical appointment or manage your banking online. Moving a service onto a screen does not mean everyone is equally equipped to use it. Our story asks whose digital skills are being reflected when we describe a country as digitally advanced.
+
+![Digital skills across 27 EU countries in 2025, with Germany, Estonia and Romania pulled outward. Each segment contains six age groups, from youngest inside to oldest outside.](images/europe_digital_skills_lifted.png){width=100%}
+
+### The comparison changes when we look at age
+
+In 2025, Estonia's digital-skills estimate for people aged 25–34 was 86.0%, compared with Germany's 69.8%. Among people aged 65–74, the order reversed: Germany stood at 41.2%, while Estonia stood at 20.3%. Romania's estimate for the older group was 7.3%.
+
+These comparisons raise a more revealing question than simply asking which country leads: who shares in that country's digital progress?
+
+We will investigate how these age patterns compare across the EU and across 2021, 2023 and 2025. The figures describe differences between age groups; they do not show individuals losing skills as they grow older or establish what causes the differences.
+
+*Source: Eurostat, isoc_sk_dskl_i21; indicator I_DSK2_BAB; percentage of individuals. The circular visual shows 162 estimates covering 27 EU countries and six age groups in 2025. Colours represent percentages, not population sizes. These are survey-derived estimates based on reported digital activities, rather than a direct skills test; people aged 75+ are outside this view.*
+
 [Slide-deck of the data story](presentation.qmd)
 
 ```{r}
