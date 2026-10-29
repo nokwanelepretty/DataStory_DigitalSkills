@@ -94,6 +94,136 @@ plot_data |>
 
 dir.create("images", showWarnings = FALSE)
 
+
+# Redesign: one clear visual story
+
+story_colours <- c(
+  "Estonia" = "#55DCCE",
+  "Germany" = "#FFD080",
+  "Romania" = "#EF9A91",
+  "EU-27 benchmark" = "#AAB7CA"
+)
+
+# Labels for the oldest age group
+end_labels <- plot_data |>
+  filter(ind_type == "Y65_74") |>
+  mutate(
+    label = paste0(country, "  ", sprintf("%.1f%%", values))
+  )
+
+# Create the chart
+age_story <- ggplot(
+  plot_data,
+  aes(
+    x = as.numeric(age),
+    y = values,
+    group = country,
+    colour = country
+  )
+) +
+  geom_line(
+    data = filter(plot_data, geo == "EU27_2020"),
+    linewidth = 1.2,
+    linetype = "dashed"
+  ) +
+  geom_line(
+    data = filter(plot_data, geo != "EU27_2020"),
+    linewidth = 1.8
+  ) +
+  geom_point(size = 3.5) +
+  geom_text(
+    data = end_labels,
+    aes(x = 6.18, label = label),
+    hjust = 0,
+    size = 3.8,
+    fontface = "bold",
+    show.legend = FALSE
+  ) +
+  scale_colour_manual(values = story_colours) +
+  scale_x_continuous(
+    breaks = 1:6,
+    labels = levels(plot_data$age),
+    limits = c(0.8, 7.8),
+    expand = c(0, 0)
+  ) +
+  scale_y_continuous(
+    breaks = seq(0, 100, 25),
+    labels = function(x) paste0(x, "%"),
+    limits = c(0, 100),
+    expand = expansion(mult = c(0, 0.03))
+  ) +
+  labs(
+    title = "The digital advantage changes with age",
+    subtitle = paste0(
+  "Estonia leads Germany through ages 16–54; ",
+  "Germany leads from ages 55–74.\n",
+  "Share with basic or above-basic digital skills · 2025"
+),
+    x = "AGE GROUP",
+    y = "PEOPLE WITH AT LEAST BASIC DIGITAL SKILLS",
+    caption = paste0(
+      "SOURCE: Eurostat, dataset isoc_sk_dskl_i21, indicator I_DSK2_BAB.\n",
+      "Survey estimates based on reported digital activities, not a direct skills test.\n",
+      "Population aged 16–74. Lines connect age groups, not changes over time."
+    )
+  ) +
+  coord_cartesian(clip = "off") +
+  theme_minimal(base_size = 14, base_family = "sans") +
+  theme(
+    plot.background = element_rect(fill = "#111D2E", colour = NA),
+    panel.background = element_rect(fill = "#111D2E", colour = NA),
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor = element_blank(),
+    panel.grid.major.y = element_line(
+      colour = "#2B3749",
+      linewidth = 0.5
+    ),
+    legend.position = "none",
+    axis.text = element_text(
+      colour = "#C7CFDB",
+      size = 11
+    ),
+    axis.title.x = element_text(
+      colour = "#AAB7CA",
+      size = 10,
+      margin = margin(t = 16),
+      hjust = 0
+    ),
+    axis.title.y = element_blank(),
+    plot.title = element_text(
+      family = "serif",
+      size = 27,
+      colour = "#F8F3E9",
+      margin = margin(b = 12)
+    ),
+    plot.subtitle = element_text(
+      colour = "#C7CFDB",
+      size = 12,
+      lineheight = 1.3,
+      margin = margin(b = 22)
+    ),
+    plot.caption = element_text(
+      colour = "#AAB7CA",
+      size = 9,
+      hjust = 0,
+      lineheight = 1.35,
+      margin = margin(t = 22)
+    ),
+    plot.margin = margin(25, 115, 25, 25)
+  )
+
+print(age_story)
+
+ggsave(
+  "images/digital_skills_age_story.png",
+  age_story,
+  width = 14,
+  height = 9,
+  dpi = 300,
+  bg = "#111D2E"
+)
+
+
 # Redesign: one clear visual story
 story_colours <- c(
   "Estonia" = "#55DCCE",
