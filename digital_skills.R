@@ -62,6 +62,38 @@ print(file.exists(
     "data/digital_skills_age_eu.csv")
 ))
 
+# Prepare the selected-country comparison for 2025
+plot_data <- skills_age |>
+  filter(
+    time == 2025,
+    geo %in% c("EE", "DE", "RO", "EU27_2020")
+  ) |>
+  mutate(
+    age = factor(
+      ind_type,
+      levels = age_codes,
+      labels = c(
+        "16–24", "25–34", "35–44",
+        "45–54", "55–64", "65–74"
+      )
+    ),
+    country = recode(
+      geo,
+      EE = "Estonia",
+      DE = "Germany",
+      RO = "Romania",
+      EU27_2020 = "EU-27 benchmark"
+    )
+  )
+
+# Inspect the values behind the chart
+plot_data |>
+  select(country, age, values) |>
+  pivot_wider(names_from = age, values_from = values) |>
+  print()
+
+dir.create("images", showWarnings = FALSE)
+
 # Redesign: one clear visual story
 story_colours <- c(
   "Estonia" = "#55DCCE",
