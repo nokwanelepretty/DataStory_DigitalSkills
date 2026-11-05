@@ -90,35 +90,9 @@ These are everyday situations to think about, rather than experiences measured d
 
 There is research behind that familiar moment of helping, too. In interviews with 21 adults aged 65 and over in Finland, Korpela, Pajula and Hänninen (2024) found that help from family and friends could support learning, but could also hinder independent use. Getting a task done and learning how to do it are not always the same thing. The study helps us think about our opening situation; it does not tell us how common that experience is across Europe.
 
-### There are places to ask
+### Three people to keep in mind
 
-We wanted to include examples of support as well as differences in the data. A review of 46 studies points towards carefully paced, step-by-step teaching and support adapted to learners’ needs (Xu et al., 2025). Interviews with 34 digital educators in Ireland similarly highlight practical guidance and hands-on learning, alongside barriers such as transport, connectivity and devices (Gruben et al., 2025). These findings give us a basis for asking what useful support looks like, rather than assuming that any course will work for everyone.
-
-In Germany, **Sparkasse Leipzig and VHS Nordsachsen** advertised a free online-banking course for older adults in Oschatz in March 2026. It covered the app, safe use and individual questions, and was open to interested people beyond the bank's own customers. (Sparkasse Leipzig, 2026).
-
-In Estonia, **Tallinn Libraries** offer free individual and group digital guidance for seniors, including help with everyday digital difficulties and online payments. (Tallinn Libraries, n.d.).
-
-In Romania, **Vodafone Foundation's Hi Digital** offers free practical workshops for people aged 65+, covering smartphones, online payments and safety. Romania's lower national estimate does not mean nobody is working on the problem. (Vodafone Foundation Romania, n.d.).
-
-These examples show that organised help exists. They do not establish how effective it is, how easily everyone can reach it, or whether it explains any of the national differences. They do give us something concrete to ask about beyond expecting relatives to fill every gap.
-
-Research on Estonia and Finland makes a related point: expanding digital services can create opportunities while also creating difficulties for older residents, and service design needs to respond to people’s needs (Leppiman, Riivits-Arkonsuo and Pohjola, 2021). For us, that means looking at the service as well as the person trying to use it. This is an interpretation informed by the literature, not a cause established by our Eurostat comparisons.
-
-## What changed our minds
-
-We started by asking which countries lead. We ended up asking who shares in that lead.
-
-The Germany–Estonia comparison changed when we changed the age group, and that reversal appeared in all three years. Across the EU, older adults' estimates were lower than younger adults', but results among older adults also differed widely between countries.
-
-A country's digital reputation leaves a lot unsaid. For the person trying to manage an everyday task, what matters is whether they can do it, whether someone will explain it when they get stuck, and whether that help is available when they need it.
-
-[View our presentation](presentation.qmd). Methods, audience personas and the source-quality check follow in the appendix.
-
-## Project appendix {.appendix}
-
-### Audience and prioritised story points
-
-This story is for people who use digital services, support someone who needs help, or organise support in their community. We use three fictional audience personas to make those readers concrete. They are design aids, not interview participants or people identified in the Eurostat data.
+Who might recognise themselves in these situations? We imagined three readers: someone helping a relative, someone learning, and someone organising support. These are fictional audience personas, not interview participants or people identified in the Eurostat data.
 
 #### Lena, 35: helping from a distance
 
@@ -134,12 +108,23 @@ Elena is a retired teacher in Bucharest. She uses her smartphone to keep in touc
 
 Maarika works in a community library in Tallinn. People ask her about everyday digital tasks. She wants evidence to help discuss local support with colleagues, but knows a national percentage cannot tell her what each visitor needs.
 
+Their situations bring us back to the same question: when someone gets stuck, where can they turn for help that gives them time to learn?
 
-Our guiding question is: **How do digital skills differ across age groups in the EU, and how do Germany, Estonia and Romania compare with the wider European pattern?**
+### There are places to ask
 
-The story centres on three findings: the Germany–Estonia reversal across age groups; the younger–older difference across all 27 EU countries; and the wide variation between countries among adults of the same age.
+We wanted to include examples of support as well as differences in the data. A review of 46 studies points towards carefully paced, step-by-step teaching and support adapted to learners’ needs (Xu et al., 2025). Interviews with 34 digital educators in Ireland similarly highlight practical guidance and hands-on learning, alongside barriers such as transport, connectivity and devices (Gruben et al., 2025). These findings give us a basis for asking what useful support looks like, rather than assuming that any course will work for everyone.
 
-### Data and interpretation
+In Germany, **Sparkasse Leipzig and VHS Nordsachsen** advertised a free online-banking course for older adults in Oschatz in March 2026. It covered the app, safe use and individual questions, and was open to interested people beyond the bank's own customers. (Sparkasse Leipzig, 2026).
+
+In Estonia, **Tallinn Libraries** offer free individual and group digital guidance for seniors, including help with everyday digital difficulties and online payments. (Tallinn Libraries, n.d.).
+
+In Romania, **Vodafone Foundation's Hi Digital** offers free practical workshops for people aged 65+, covering smartphones, online payments and safety. Romania's lower national estimate does not mean nobody is working on the problem. (Vodafone Foundation Romania, n.d.).
+
+These examples show that organised help exists. They do not establish how effective it is, how easily everyone can reach it, or whether it explains any of the national differences. They do give us something concrete to ask about beyond expecting relatives to fill every gap.
+
+Research on Estonia and Finland makes a related point: expanding digital services can create opportunities while also creating difficulties for older residents, and service design needs to respond to people’s needs (Leppiman, Riivits-Arkonsuo and Pohjola, 2021). For us, that means looking at the service as well as the person trying to use it. This is an interpretation informed by the literature, not a cause established by our Eurostat comparisons.
+
+## Data and interpretation
 
 We use [Eurostat's Individuals' level of digital skills dataset](https://ec.europa.eu/eurostat/databrowser/view/isoc_sk_dskl_i21/default/table?lang=en), code `isoc_sk_dskl_i21`. The selected measure is basic or above-basic overall digital skills (`I_DSK2_BAB`), expressed as a percentage of individuals (`PC_IND`).
 
@@ -151,13 +136,11 @@ The indicator is based on reported digital activities, rather than a direct skil
 
 Differences across age groups are not individual ageing trajectories. Differences between survey years do not necessarily describe the same people. We do not infer causes from these descriptive comparisons or calculate confidence intervals from the supplied extract.
 
-#### Data-quality checks and limitations
+### Data-quality checks
 
 We checked all 504 selected records against Eurostat’s dissemination API (Eurostat, n.d.-f) on **5 November 2026**. Every available value matched the saved CSV, and the missing-value pattern was unchanged. The API reported a dataset update of 17 April 2026.
 
-Three records carried Eurostat's `u` flag, meaning low reliability:
-
-The flagged records were Ireland’s estimates for ages 16–24 in 2021 (unavailable) and 2023 (69.56%), and ages 25–34 in 2023 (87.99%).
+Three records carried Eurostat's `u` flag, meaning low reliability. These were Ireland’s estimates for ages 16–24 in 2021 (unavailable) and 2023 (69.56%), and ages 25–34 in 2023 (87.99%).
 
 None of these records enters the charts in this report. All 168 selected records for 2025, and all 12 Germany–Estonia records used in the three-year reversal chart, had no observation flags. No selected record carried a break-in-series flag. An absent flag does not mean an estimate is exact or that a difference is statistically significant.
 
@@ -167,17 +150,24 @@ We also reviewed the comparability sections of the latest national ICT-survey qu
 
 Our finding remains descriptive: the ordering of the Germany and Estonia estimates reverses between the selected age groups in each year. We do not claim that age causes the differences, that a programme explains them, or that the gaps are statistically significant. The check covers published observation flags and the cited methodological statements; it is not a reanalysis of respondent-level data or all 27 national survey reports.
 
-#### Reproducibility
+### Data and code
 
 The saved data are in `data/digital_skills_age_eu.csv`. The scripts [digital_skills_visuals.R](digital_skills_visuals.R) and [digital_skills_eu_comparison.R](digital_skills_eu_comparison.R) generate the figures and supporting comparison files. Run both scripts from the project folder before running `quarto render`. The report calculates its quoted figures from the same saved CSV.
 
-### Story structure
+## What changed our minds
 
-We used Dykes’s (2023) Data Storytelling Arc to shape the presentation: start with a familiar situation, introduce our expectation about Estonia, reveal the reversal, and then widen the comparison. The report leads with the main finding so readers can understand it before exploring the supporting detail.
+We started by asking which countries lead. We ended up asking who shares in that lead.
+
+The Germany–Estonia comparison changed when we changed the age group, and that reversal appeared in all three years. Across the EU, older adults' estimates were lower than younger adults', but results among older adults also differed widely between countries.
+
+A country's digital reputation leaves a lot unsaid. For the person trying to manage an everyday task, what matters is whether they can do it, whether someone will explain it when they get stuck, and whether that help is available when they need it.
+
+[View our presentation](presentation.qmd).
 
 ## References {.unnumbered}
 
 Dykes, B. (2023) *Data Storytelling Arc: Demystifying Narrative Structure in Data Stories*. Available at: https://www.effectivedatastorytelling.com/post/data-storytelling-demystifying-narrative-structure-in-data-stories (Accessed: 5 November 2026).
+
 
 Eurostat (n.d.-a) *Individuals’ level of digital skills (isoc_sk_dskl_i21) [dataset]*. Available at: https://ec.europa.eu/eurostat/databrowser/view/isoc_sk_dskl_i21/default/table?lang=en (Accessed: 5 November 2026).
 
