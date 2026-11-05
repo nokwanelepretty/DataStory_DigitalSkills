@@ -76,7 +76,22 @@ Older adults have diverse abilities and experiences. These results should not be
 
 ## Audience and prioritised story points
 
-This story is for people who encounter digital services in everyday life, support relatives online, or work in community organisations and public services. No university background or statistical knowledge is assumed.
+This story is for people who use digital services, support someone who needs help, or organise support in their community. We use three fictional audience personas to make those readers concrete. They are design aids, not interview participants or people identified in the Eurostat data.
+
+### Lena, 35: helping from a distance
+
+Lena lives in Bremen. Her father lives in another town and sometimes calls when he gets stuck on his phone. She can explain something over the phone, but she cannot always be there. She wants to understand whether difficulties like these are part of a wider pattern and where someone could find help nearby.
+
+
+### Elena, 68: learning without feeling judged
+
+Elena is a retired teacher in Bucharest. She uses her smartphone to keep in touch with people, but feels less confident making payments online. She wants to learn at her own pace and know where she can ask questions. She does not want her age to become shorthand for what she can or cannot do.
+
+
+### Maarika, 46: organising help that people will use
+
+Maarika works in a community library in Tallinn. People ask her about everyday digital tasks. She wants evidence to help discuss local support with colleagues, but knows a national percentage cannot tell her what each visitor needs.
+
 
 Our guiding question is: **How do digital skills differ across age groups in the EU, and how do Germany, Estonia and Romania compare with the wider European pattern?**
 
@@ -90,7 +105,7 @@ Our guiding question is: **How do digital skills differ across age groups in the
 
 We use [Eurostat's Individuals' level of digital skills dataset](https://ec.europa.eu/eurostat/databrowser/view/isoc_sk_dskl_i21/default/table?lang=en), code `isoc_sk_dskl_i21`. The selected measure is basic or above-basic overall digital skills (`I_DSK2_BAB`), expressed as a percentage of individuals (`PC_IND`).
 
-The saved extract contains **`r nrow(skills)` country–age–year records**, covering 27 EU countries plus the EU-27 aggregate, six age groups and three years. There are `r sum(is.na(skills$values))` missing values: Ireland, ages 16–24, in 2021. We leave this value missing. It does not enter the charts presented here.
+The saved extract contains **`r nrow(skills)` country–age–year records**, covering 27 EU countries plus the EU-27 aggregate, six age groups and three years. There is one missing value: Ireland, ages 16–24, in 2021. We leave this value missing. It does not enter the charts presented here.
 
 The 2025 Europe-wide paired-dot chart uses 54 estimates. The three-country age profiles use 18 country estimates plus six EU benchmark estimates. The three-year reversal chart uses 12 estimates.
 
@@ -98,9 +113,9 @@ The indicator is based on reported digital activities, rather than a direct skil
 
 Differences across age groups are not individual ageing trajectories. Differences between survey years do not necessarily describe the same people. We do not infer causes from these descriptive comparisons or calculate confidence intervals from the supplied extract.
 
-::: {.callout-important title="Validation still required before final submission"}
-The CSV does not contain observation-quality flags. Review Eurostat's reliability flags, methodological notes and breaks in series before making final claims about cross-country or year-to-year comparability. The present figures support visual drafts, not a completed source-quality audit.
-:::
+### Data-quality limitations
+
+The saved CSV does not include Eurostat's observation-quality flags. Reliability notes and possible breaks in series have not yet been checked for the selected observations. We therefore treat the comparisons as descriptive and do not claim that differences are statistically significant or that year-to-year changes establish improvement or decline.
 
 ### Reproduce the analysis
 
@@ -142,9 +157,29 @@ A country's digital-skills lead can reverse when we change the age group under c
 
 Digital progress therefore deserves an age-specific view. The next explanatory question is why these differences exist—a question this descriptive dataset alone cannot answer.
 
+## How we shaped the story {.appendix}
+
+Our presentation uses an everyday situation to establish why the topic matters, introduces our expectation about Estonia, and then reveals the Germany–Estonia reversal. The comparisons across years and countries test how far that finding extends. Examples of practical support provide a constructive ending, without claiming that these programmes caused the national results.
+
+We use [Brent Dykes's public explanation of the Data Storytelling Arc (2023)](https://www.effectivedatastorytelling.com/post/data-storytelling-demystifying-narrative-structure-in-data-stories) as a design reference. The mapping below is our application of that framework, rather than a claim that every part of the book has been reviewed.
+
+| Narrative function | Our application | Audience purpose |
+|:--|:--|:--|
+| Setting and hook | A familiar phone-help situation and our expectation about Estonia | Connect the question to a recognisable concern without presenting a fictional example as evidence. |
+| Rising points | The younger-adult comparison followed by the older-adult comparison | Give the audience enough context to see the reversal. |
+| Aha moment | The country ordering reverses between age groups | Make the main finding explicit: a national reputation can conceal different age-group patterns. |
+| Supporting checks | Repeat the comparison for 2021 and 2023, then widen to all EU countries | Show the scope and limits of the observation. |
+| Options and next steps | Examples of bank training, library guidance and digital workshops | Identify forms of support worth exploring without claiming effectiveness from programme descriptions. |
+
+The report uses a different reading order. It gives the main finding first, then supporting comparisons and interpretation, followed by methods and design notes. This follows the instructor's advice to use a news-article structure. Readers can understand the central result without having to read the whole report.
+
+The supplied Dykes PDF contains cover/front-matter pages only. It does not contain the assigned chapter or Figure 4.3. The public article above is the substantive source used for this design rationale. A chapter-specific reading check remains outstanding.
+
 ## Sources and further reading
 
 - [Eurostat: Individuals' level of digital skills, dataset isoc_sk_dskl_i21](https://ec.europa.eu/eurostat/databrowser/view/isoc_sk_dskl_i21/default/table?lang=en). Indicator and unit are specified above; analysis uses the saved project extract.
 - [Leppiman, Riivits-Arkonsuo and Pohjola (2021), Old-Age Digital Exclusion as a Policy Challenge in Estonia and Finland](https://doi.org/10.1007/978-3-030-51406-8_32). Background reading motivating the topic; it does not establish the causes of our observed differences.
 
 [Presentation source](presentation.qmd)
+
+- [Dykes, B. (2023). Data Storytelling Arc: Demystifying Narrative Structure in Data Stories](https://www.effectivedatastorytelling.com/post/data-storytelling-demystifying-narrative-structure-in-data-stories). Public author explanation used for the narrative design rationale.

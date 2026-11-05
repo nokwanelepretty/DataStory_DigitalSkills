@@ -1,53 +1,76 @@
-# Visual Communication and Data Story Telling Playground
+# Digital progress—for whom?
 
-This is a template repository. You can make your own repos based on this template. 
+**Age and digital skills in the European Union**
 
-## Get your playground ready
+A data story by **Nokwanele Pretty Gwebu and Kay-Lee Dramat** for Visual Communication and Data Storytelling, Constructor University, Fall 2026.
 
-1. Create your own playground repository from this template (Green Button top right). Give it a name like `VisComPlayground`. 
-2. Clone your repository to your computer. (Open Folder from Git)
-3. In TERMINAL: Type `quarto render` to produce the website. 
-4. Open the website in your browser by clicking on `_site/index.html`
-5. Explore the different HTML-page types in the HTML but also in their source type:
-    - A **report** in a typical article style with references, numbered figures, and crossreferences. 
-    - More **referencing** in the "Bibliograpy Example"
-    - A **slide deck** in the "Presentation"
-    - An example of **"Data Scrollytelling"** 
-6. The scripts `CountryBubbles.R` and `WarmingStripes.R` are files with code for producing Visuals. Make your own visuals, and develop a sense for what is needed for a great visual in a data story. 
+We expected Estonia to stand out. Then we looked at different age groups. Estonia's digital-skills estimate exceeds Germany's among adults aged 25–34, but Germany's exceeds Estonia's among adults aged 65–74. The reversal appears in 2021, 2023 and 2025.
 
-## Make your DataStory repo from here
+Our question is whose experience we describe when we call a country digitally advanced.
 
-The default delivery in **Visual Communication and Data Storytelling** is a repository with the 
+## Read or present the story
 
-- The **slide deck** of your data story in *narrative* form (Default reproducible format: Quarto Revealjs HTML)
-- The accompanying **report** of your data story in *news article* form (Default reproducible format: Quarto HTML)
+- `index.qmd`: report, audience personas, methods, limitations and sources.
+- `presentation.qmd`: narrative presentation in Quarto Revealjs, with speaker notes.
+- `_quarto.yml`: project settings and navigation.
 
-Alternatively, a narrative scrollytelling part can replace the slide deck (Format: Quarto closeread-html)   
-Additionally a dashboard with interactive graphics for self exploration of readers
+The report addresses three fictional audience personas: an adult helping a parent remotely, an older adult who wants to learn without judgement, and a community librarian organising support. The personas guide communication choices; they are not research participants.
 
+## Data
 
-### Step-by-step guide: How to make a minimal version from your DataStory
+Source: [Eurostat, Individuals' level of digital skills](https://ec.europa.eu/eurostat/databrowser/view/isoc_sk_dskl_i21/default/table?lang=en), dataset `isoc_sk_dskl_i21`.
 
+- Measure: basic or above-basic overall digital skills, `I_DSK2_BAB`.
+- Unit: percentage of individuals, `PC_IND`.
+- Scope: 27 EU countries and the EU-27 aggregate; six age groups from 16–24 to 65–74; 2021, 2023 and 2025.
+- Saved age extract: 504 records, with one missing value for Ireland, ages 16–24, in 2021. It does not enter the displayed comparisons.
 
-1. On GitHub: Create another repository from this template (Green Button top right). Name it `DataStory_KEYWORD`. Replace KEYWORD with one keyword describing your data story. 
-2. On GitHub: Add all team members as collaborators. Settings -> Collaborators -> Add people -> *Type in GitHub-name to add*
-    - If you chose to keep your repository private, you need to add the instructor as a collaborator for assessment! 
-4. On your computers: Clone the repository to your computer. (Open Folder from Git)
-5. On your computer: Remove 
-    - `bibliography-example.qmd`
-    - `CountryBubbles.R`
-    - `WarmingStripes.R`
-    - `scrollytelling.qmd`
-    - all files in `data/`
-6. Update in `_quarto.yml`: In `website:navbar:left:` remove the lines `bibliography-example.qmd` and `scrollytelling.qmd`. Enter the title of your Data Story 
-7. On bibliography: When you export your own bibliography file from Zotero save it in the same place as `Visual Communication and Data Storytelling.json`. Then go to `index.html` and replace the filename in the YAML `bibliography:`. Then you can delete the old `.json` file. 
-8. On `_extensions`: If you do not do a scrollytelling part you can delete this folder. 
-9. `quarto render` in TERMINAL to test if it works. 
-10. Remove this very text from `README.md` (this very file) and write some short basic info about what your repo is. 
-11. Source Control Pane: Commit all changes (including the deleted files), and push to GitHub
+These are survey-derived group estimates based on reported digital activities. They are not direct skills-test results, individual ageing trajectories or evidence of causation. Ages 75+ fall outside the selection.
 
-Now you have a simplified file structure for your Data Story. Start editing:
+## Reproduce the work
 
-- `index.qmd` with the basic structure of about your report, like title and authors. Remove all the text and put a draft for your structure. 
-- `presentation.qmd` with title and a first structure of `## HEADLINES` to specifiy some slides you want to have
-- Put your data in the data folder.
+Requirements: Quarto, R, and the R packages `tidyverse` and `knitr`. The data-retrieval script also needs `eurostat` and an internet connection.
+
+From the project root, run in the R Console to regenerate the report charts and supporting tables from the saved extract:
+
+```r
+source("digital_skills_visuals.R")
+source("digital_skills_eu_comparison.R")
+```
+
+To refresh the source extract, `digital_skills.R` retrieves Eurostat data and overwrites the saved CSVs. A refresh may change results. Review the source, regenerate the visuals and recheck all text and presentation values before using a refreshed extract.
+
+The circular exploratory visual is generated by `europe_story.R`.
+
+In the Terminal, render both deliverables:
+
+```sh
+quarto render
+```
+
+Open `_site/index.html` for the report and `_site/presentation.html` for the presentation. For a local browser preview:
+
+```sh
+quarto preview
+```
+
+The report calculates its displayed summary values from the saved CSV but embeds previously exported chart images. The presentation contains embedded chart values. Rendering alone does not regenerate or synchronise all charts and presentation numbers. Keep the CSV and outputs together as a checked snapshot.
+
+## Repository layout
+
+- `data/`: source extracts used for analysis.
+- `analysis/`: comparison tables produced by the scripts.
+- `images/`: exported figures, including exploratory work.
+- `_site/`: generated website output.
+
+## Storytelling approach
+
+The report leads with the main result, followed by evidence and background. The presentation builds from an everyday concern through our initial expectation, the reversal and wider comparisons, then ends with examples of support. The report documents this design with reference to [Brent Dykes's public explanation of the Data Storytelling Arc](https://www.effectivedatastorytelling.com/post/data-storytelling-demystifying-narrative-structure-in-data-stories).
+
+The supplied course PDF contains only cover/front-matter pages. It does not support a claim that the assigned chapter or Figure 4.3 has been reviewed.
+
+## Status
+
+Working draft, not yet a final assessed submission. Remaining checks include Eurostat observation flags and comparability notes, original credits for supplied images, the full report editorial pass, final rendering and repository cleanup. Support programmes illustrate available assistance; their descriptions do not establish effects on national digital-skills estimates.
+
+Online publication has not been confirmed. The presentation still requires team rehearsal and delivery in class.
